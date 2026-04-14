@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoCaya – Kereta Terpakai Terpercaya Malaysia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🚗</span>
+        <span>Abah<strong>Used Car</strong></span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link active">Laman Utama</a>
+        <a href="inventory.html" class="nav-link">Inventori</a>
+        <a href="integrity.html" class="nav-link">Integrity Hub</a>
+        <a href="#feedback" class="nav-link">Maklum Balas</a>
+      </nav>
+
+      <!-- CTA Buttons -->
+      <div class="nav-cta">
+        <a href="https://wa.me/60183944261" target="_blank" class="btn btn-whatsapp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a href="inventory.html" class="btn btn-primary">Beli Kereta</a>
+      </div>
+
+      <!-- Hamburger for Mobile -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== HERO SECTION ===================== -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <div class="hero-text" data-animate>
+        <span class="hero-badge">🇲🇾 Platform Kereta Terpakai #1 Malaysia</span>
+        <h1>Beli Kereta Terpakai <br/><span class="gradient-text">Dengan Keyakinan</span></h1>
+        <p class="hero-sub">Setiap kereta diperiksa 175-titik, harga telus tanpa caj tersembunyi. Cari kereta impian anda hari ini.</p>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+          <div class="search-field">
+            <label>Jenama</label>
+            <select>
+              <option value="">Semua Jenama</option>
+              <option>Perodua</option>
+              <option>Proton</option>
+              <option>Honda</option>
+              <option>Toyota</option>
+              <option>Mazda</option>
+              <option>Hyundai</option>
+            </select>
+          </div>
+          <div class="search-field">
+            <label>Model</label>
+            <select>
+              <option value="">Semua Model</option>
+              <option>Myvi</option>
+              <option>Axia</option>
+              <option>X50</option>
+              <option>X70</option>
+              <option>City</option>
+              <option>Vios</option>
+            </select>
+          </div>
+          <div class="search-field">
+            <label>Bajet Bulanan</label>
+            <select>
+              <option value="">Pilih Bajet</option>
+              <option>RM500 – RM700</option>
+              <option>RM700 – RM900</option>
+              <option>RM900 – RM1,200</option>
+              <option>RM1,200 – RM1,500</option>
+              <option>RM1,500+</option>
+            </select>
+          </div>
+          <a href="inventory.html" class="btn btn-primary search-btn">Cari Sekarang →</a>
+        </div>
+
+        <!-- Quick CTAs -->
+        <div class="hero-quick-links">
+          <a href="inventory.html" class="quick-link">🚘 Semua Inventori</a>
+          <a href="https://wa.me/60183944261" target="_blank" class="quick-link">💬 Semak Kelayakan Loan</a>
+          <a href="inventory.html" class="quick-link">📋 Laporan Pemeriksaan</a>
+        </div>
+      </div>
+
+      <!-- Hero Image / Stats Card -->
+      <div class="hero-visual" data-animate>
+        <div class="hero-car-card">
+          <div class="car-img-placeholder">
+            <div class="car-emoji">🚙</div>
+            <div class="car-label">Perodua Myvi 2022</div>
+            <div class="car-price">RM 52,800 <span class="otr">OTR</span></div>
+            <div class="car-monthly">≈ RM 680/bulan</div>
+            <span class="status-badge available">Available</span>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><span class="stat-num">4.9★</span><span class="stat-label">Rating</span></div>
+            <div class="stat"><span class="stat-num">2,400+</span><span class="stat-label">Kereta</span></div>
+            <div class="stat"><span class="stat-num">15K+</span><span class="stat-label">Pelanggan</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TRUST BADGES ===================== -->
+  <section class="trust-section">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-card" data-animate>
+          <div class="trust-icon">🔍</div>
+          <h3>175-Titik Pemeriksaan</h3>
+          <p>Setiap kereta diperiksa secara menyeluruh oleh jurutera bertauliah kami sebelum dijual.</p>
+        </div>
+        <div class="trust-card" data-animate>
+          <div class="trust-icon">🛡️</div>
+          <h3>Waranti 1 Tahun</h3>
+          <p>Nikmati ketenangan fikiran dengan waranti komprehensif selama 12 bulan tanpa soal.</p>
+        </div>
+        <div class="trust-card" data-animate>
+          <div class="trust-icon">💰</div>
+          <h3>Harga Tetap & Telus</h3>
+          <p>Tiada tawar-menawar, tiada caj tersembunyi. Harga OTR yang anda nampak adalah harga muktamad.</p>
+        </div>
+        <div class="trust-card" data-animate>
+          <div class="trust-icon">📄</div>
+          <h3>Laporan Terbuka</h3>
+          <p>Akses laporan pemeriksaan penuh secara percuma sebelum membuat sebarang keputusan pembelian.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SOCIAL PROOF ===================== -->
+  <section class="social-proof">
+    <div class="container">
+      <div class="section-header">
+        <h2>Apa Kata <span class="gradient-text">Pelanggan Kami</span></h2>
+        <p>Ulasan tulen dari pembeli yang telah disahkan dalam sistem kami.</p>
+        <div class="overall-rating">
+          <span class="big-rating">4.9</span>
+          <div>
+            <div class="stars">★★★★★</div>
+            <span class="rating-count">Berdasarkan 3,241 ulasan disahkan</span>
+          </div>
+        </div>
+      </div>
+      <div class="reviews-grid">
+        <!-- Review 1 -->
+        <div class="review-card" data-animate>
+          <div class="review-header">
+            <div class="reviewer-avatar">AH</div>
+            <div>
+              <div class="reviewer-name">Ahmad Hafizuddin ✅</div>
+              <div class="review-meta">Pembeli Disahkan · Myvi 2021</div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+          <p class="review-text">"Proses pembelian sangat mudah dan telus. Laporan pemeriksaan membantu saya buat keputusan dengan yakin. Harga OTR tepat seperti yang tertera. Highly recommended!"</p>
+          <div class="review-date">14 Mac 2025</div>
+        </div>
+        <!-- Review 2 -->
+        <div class="review-card" data-animate>
+          <div class="review-header">
+            <div class="reviewer-avatar" style="background:#e74c3c">SN</div>
+            <div>
+              <div class="reviewer-name">Siti Norzahira ✅</div>
+              <div class="review-meta">Pembeli Disahkan · Proton X50 2022</div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+          <p class="review-text">"Sangat suka dengan konsep Integrity Hub – tahu ulasan yang saya baca adalah tulen. Kereta dalam keadaan yang sangat baik. Loan approved dalam masa 2 hari. Terima kasih AutoCaya!"</p>
+          <div class="review-date">2 April 2025</div>
+        </div>
+        <!-- Review 3 -->
+        <div class="review-card" data-animate>
+          <div class="review-header">
+            <div class="reviewer-avatar" style="background:#27ae60">RZ</div>
+            <div>
+              <div class="reviewer-name">Razif Zulkifli ✅</div>
+              <div class="review-meta">Pembeli Disahkan · Honda City 2020</div>
+            </div>
+            <div class="review-stars">★★★★☆</div>
+          </div>
+          <p class="review-text">"Servis cemerlang dan juruteknik sangat berpengetahuan. Ada satu isu kecil dengan AC tapi syarikat terus ambil tindakan dalam tempoh waranti. Ini yang dipanggil after-sales yang bagus."</p>
+          <div class="review-date">19 Februari 2025</div>
+        </div>
+      </div>
+      <div class="center-cta">
+        <a href="integrity.html" class="btn btn-outline">Lihat Semua Ulasan & Dasar Integriti →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== POPULAR CARS PREVIEW ===================== -->
+  <section class="popular-cars">
+    <div class="container">
+      <div class="section-header">
+        <h2>Kereta <span class="gradient-text">Popular Minggu Ini</span></h2>
+        <p>Kereta terlaris yang masih tersedia untuk anda.</p>
+      </div>
+      <div class="cars-grid">
+        <!-- Car Card 1 -->
+        <div class="car-card" data-animate>
+          <div class="car-img-wrap">
+            <img src="images/myvi.jpg" alt="Perodua Myvi">
+            <span class="status-badge available">Available</span>
+          </div>
+          <div class="car-info">
+            <div class="car-name">Perodua Myvi 1.5 AV</div>
+            <div class="car-year-km">2022 · 18,000 km</div>
+            <div class="car-price-row">
+              <span class="price">RM 52,800</span>
+              <span class="monthly">~RM 680/bln</span>
+            </div>
+            <div class="car-badges">
+              <span class="badge">175-titik ✓</span>
+              <span class="badge">Waranti ✓</span>
+            </div>
+            <a href="inventory.html" class="btn btn-primary btn-full">Lihat Details</a>
+          </div>
+        </div>
+        <!-- Car Card 2 -->
+        <div class="car-card" data-animate>
+          <div class="car-img-wrap">
+            <img src="images/x50.jpg" alt="Perodua Myvi">
+            <span class="status-badge available">Available</span>
+          </div>
+          <div class="car-info">
+            <div class="car-name">Proton X50 1.5T Standard</div>
+            <div class="car-year-km">2021 · 32,000 km</div>
+            <div class="car-price-row">
+              <span class="price">RM 74,500</span>
+              <span class="monthly">~RM 950/bln</span>
+            </div>
+            <div class="car-badges">
+              <span class="badge">175-titik ✓</span>
+              <span class="badge">Waranti ✓</span>
+            </div>
+            <a href="inventory.html" class="btn btn-primary btn-full">Lihat Details</a>
+          </div>
+        </div>
+        <!-- Car Card 3 -->
+        <div class="car-card" data-animate>
+          <div class="car-img-wrap">
+            <img src="images/city.jpg" alt="Perodua Myvi">
+            <span class="status-badge reserved">Reserved</span>
+          </div>
+          <div class="car-info">
+            <div class="car-name">Honda City 1.5 V Sensing</div>
+            <div class="car-year-km">2020 · 45,000 km</div>
+            <div class="car-price-row">
+              <span class="price">RM 82,000</span>
+              <span class="monthly">~RM 1,050/bln</span>
+            </div>
+            <div class="car-badges">
+              <span class="badge">175-titik ✓</span>
+              <span class="badge">Waranti ✓</span>
+            </div>
+            <a href="inventory.html" class="btn btn-outline btn-full">Lihat Details</a>
+          </div>
+        </div>
+      </div>
+      <div class="center-cta">
+        <a href="inventory.html" class="btn btn-primary">Lihat Semua Inventori →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEEDBACK / CONTACT SECTION ===================== -->
+  <section class="feedback-section" id="feedback">
+    <div class="container">
+      <div class="feedback-grid">
+        <div class="feedback-info" data-animate>
+          <h2>Maklum Balas <span class="gradient-text">Anda Berharga</span></h2>
+          <p>Kami sentiasa ingin menambah baik pengalaman anda. Kongsi pendapat atau pertanyaan anda dengan kami.</p>
+          <div class="contact-options">
+            <a href="https://wa.me/60183944261" target="_blank" class="contact-item">
+              <div class="contact-icon">💬</div>
+              <div>
+                <div class="contact-label">WhatsApp Kami</div>
+                <div class="contact-value">+60 18-394 4261</div>
+              </div>
+            </a>
+            <a href="mailto:muhddanial32@gmail.com" class="contact-item">
+              <div class="contact-icon">📧</div>
+              <div>
+                <div class="contact-label">E-mel</div>
+                <div class="contact-value">muhddanial32@gmail.com</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Feedback Form -->
+        <form class="feedback-form" data-animate id="feedbackForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Nama Penuh</label>
+              <input type="text" id="fname" placeholder="Contoh: Ahmad bin Ali" required />
+            </div>
+            <div class="form-group">
+              <label for="fphone">No. Telefon</label>
+              <input type="tel" id="fphone" placeholder="01X-XXXXXXX" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="femail">Alamat E-mel</label>
+            <input type="email" id="femail" placeholder="example@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="ftype">Jenis Maklum Balas</label>
+            <select id="ftype">
+              <option value="">Pilih jenis...</option>
+              <option>Cadangan Penambahbaikan</option>
+              <option>Pertanyaan Pembelian</option>
+              <option>Aduan / Isu</option>
+              <option>Pujian</option>
+              <option>Lain-lain</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fmsg">Mesej Anda</label>
+            <textarea id="fmsg" rows="4" placeholder="Tulis maklum balas anda di sini..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Hantar Maklum Balas →</button>
+          <div class="form-note">Maklum balas anda akan dihantar ke <strong>muhddanial32@gmail.com</strong></div>
+          <div class="form-success" id="formSuccess">✅ Terima kasih! Maklum balas anda telah berjaya dihantar.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo" style="color:#fff">🚗 Abah<strong>Used Car</strong></div>
+          <p>Platform jualan kereta terpakai terpercaya di Malaysia dengan ketelusan penuh dan jaminan kualiti.</p>
+          <div class="footer-social">
+            <a href="https://wa.me/60183944261" target="_blank" class="social-btn">WhatsApp</a>
+            <a href="mailto:muhddanial32@gmail.com" class="social-btn">E-mel</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Navigasi</h4>
+          <a href="index.html">Laman Utama</a>
+          <a href="inventory.html">Inventori Kereta</a>
+          <a href="integrity.html">Integrity Hub</a>
+          <a href="#feedback">Maklum Balas</a>
+        </div>
+        <div class="footer-links">
+          <h4>Perkhidmatan</h4>
+          <a href="#">Semak Kelayakan Loan</a>
+          <a href="#">Laporan Pemeriksaan</a>
+          <a href="#">Waranti & Servis</a>
+          <a href="#">Jual Kereta Anda</a>
+        </div>
+        <div class="footer-links">
+          <h4>Lokasi</h4>
+          <a href="#">Selangor</a>
+          <a href="#">Kuala Lumpur</a>
+          <a href="#">Johor Bahru</a>
+          <a href="#">Pulau Pinang</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 AbahUsedCar Sdn. Bhd. · Semua hak terpelihara · Dilindungi di bawah PDPA Malaysia</p>
+        <div class="footer-badges">
+          <span>🔒 PDPA Compliant</span>
+          <span>✅ SSM Berdaftar</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/60183944261" target="_blank" class="whatsapp-float" aria-label="Chat WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>

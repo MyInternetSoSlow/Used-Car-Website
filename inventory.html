@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventori Kereta – AutoCaya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================================================
+       BAHAGIAN: BAR NAVIGASI
+       Lekat di atas — JavaScript akan tambah kelas
+       'scrolled' apabila pengguna menatal ke bawah
+  =================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+
+      <!-- Logo AutoCaya — klik untuk kembali ke laman utama -->
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🚗</span>
+        <span>Abah<strong>UsedCar</strong></span>
+      </a>
+
+      <!-- Pautan navigasi (tersembunyi pada mobile, guna hamburger) -->
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Laman Utama</a>
+        <a href="inventory.html" class="nav-link active">Inventori</a>
+        <a href="integrity.html" class="nav-link">Integrity Hub</a>
+        <a href="index.html#feedback" class="nav-link">Maklum Balas</a>
+      </nav>
+
+      <!-- Butang pantas di navbar (desktop sahaja) -->
+      <div class="nav-cta">
+        <a href="https://wa.me/60183944261" target="_blank" class="btn btn-whatsapp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a href="https://wa.me/60183944261?text=Saya%20ingin%20semak%20kelayakan%20loan%20kereta" target="_blank" class="btn btn-primary">Semak Loan</a>
+      </div>
+
+      <!-- Ikon hamburger untuk menu mobile -->
+      <button class="hamburger" id="hamburger" aria-label="Buka menu navigasi">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- ===================================================
+       BAHAGIAN: PENGEPALA HALAMAN
+       Tajuk + penerangan ringkas halaman inventori
+  =================================================== -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Inventori <span class="gradient-text">Kereta Terpakai</span></h1>
+      <p>Semua kereta telah diperiksa 175-titik · Harga OTR telus · Status stok dikemaskini secara langsung</p>
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       BAHAGIAN: PENAPIS + GRID KERETA
+       Layout dua kolum:
+         Kiri  → Sidebar penapis (filter)
+         Kanan → Grid kereta yang dipaparkan
+  =================================================== -->
+  <section class="inventory-section">
+    <div class="container inventory-layout">
+
+      <!-- -----------------------------------------------
+           SIDEBAR PENAPIS
+           Semua pilihan untuk menapis senarai kereta.
+           JavaScript membaca nilai dari sini secara langsung.
+      ----------------------------------------------- -->
+      <aside class="filter-sidebar" id="filterSidebar">
+        <div class="filter-header">
+          <h3>🔧 Tapis Kereta</h3>
+          <!-- Butang ini akan kosongkan semua penapis dan paparkan semula semua kereta -->
+          <button class="filter-reset" id="btnReset">Reset</button>
+        </div>
+
+        <!-- CARIAN NAMA / MODEL KERETA -->
+        <div class="filter-group">
+          <label class="filter-label">🔍 Cari Kereta</label>
+          <input
+            type="text"
+            id="searchInput"
+            class="filter-search-input"
+            placeholder="Cth: Myvi, X50, City..."
+            autocomplete="off"
+          />
+        </div>
+
+        <!-- PENAPIS: ANSURAN BULANAN MAKSIMUM (SLIDER JULAT) -->
+        <div class="filter-group">
+          <label class="filter-label">💳 Ansuran Bulanan Maks.</label>
+          <div class="range-labels">
+            <span>RM 500</span>
+            <!-- Teks nilai semasa slider — dikemas kini oleh JavaScript -->
+            <span id="rangeVal" class="range-current">RM 2,000+</span>
+          </div>
+          <!-- Slider penapis ansuran: dari RM500 hingga RM2000 -->
+          <input type="range" id="monthlyRange" min="500" max="2000" step="50" value="2000" />
+        </div>
+
+        <!-- PENAPIS: JENAMA KERETA (PILIHAN BERBILANG) -->
+        <div class="filter-group">
+          <label class="filter-label">🚗 Jenama</label>
+          <div class="checkbox-group">
+            <!-- Atribut data-filter="jenama" membolehkan JS tahu ini penapis jenama -->
+            <label><input type="checkbox" data-filter="jenama" value="Perodua" /> Perodua</label>
+            <label><input type="checkbox" data-filter="jenama" value="Proton"  /> Proton</label>
+            <label><input type="checkbox" data-filter="jenama" value="Honda"   /> Honda</label>
+            <label><input type="checkbox" data-filter="jenama" value="Toyota"  /> Toyota</label>
+            <label><input type="checkbox" data-filter="jenama" value="Mazda"   /> Mazda</label>
+            <label><input type="checkbox" data-filter="jenama" value="Hyundai" /> Hyundai</label>
+          </div>
+        </div>
+
+        <!-- PENAPIS: LOKASI KERETA (PILIHAN BERBILANG) -->
+        <div class="filter-group">
+          <label class="filter-label">📍 Lokasi</label>
+          <div class="checkbox-group">
+            <!-- Atribut data-filter="lokasi" membolehkan JS tahu ini penapis lokasi -->
+            <label><input type="checkbox" data-filter="lokasi" value="Selangor"     /> Selangor</label>
+            <label><input type="checkbox" data-filter="lokasi" value="Kuala Lumpur" /> Kuala Lumpur</label>
+            <label><input type="checkbox" data-filter="lokasi" value="Johor Bahru"  /> Johor Bahru</label>
+            <label><input type="checkbox" data-filter="lokasi" value="Pulau Pinang" /> Pulau Pinang</label>
+            <label><input type="checkbox" data-filter="lokasi" value="Perak"        /> Perak</label>
+          </div>
+        </div>
+
+        <!-- PENAPIS: STATUS STOK (PILIHAN BERBILANG) -->
+        <div class="filter-group">
+          <label class="filter-label">📦 Status Stok</label>
+          <div class="checkbox-group">
+            <!-- 'available' = tersedia untuk dibeli; 'reserved' = sudah ditempah -->
+            <label><input type="checkbox" data-filter="status" value="available" /> ✅ Available (Tersedia)</label>
+            <label><input type="checkbox" data-filter="status" value="reserved"  /> 🟡 Reserved (Ditempah)</label>
+          </div>
+        </div>
+
+        <!-- PENAPIS: TAHUN KELUARAN KERETA (PILIHAN BERBILANG) -->
+        <div class="filter-group">
+          <label class="filter-label">📅 Tahun Keluaran</label>
+          <div class="checkbox-group">
+            <!-- Format nilai: "tahunMula-tahunAkhir" — JS akan parse ini -->
+            <label><input type="checkbox" data-filter="tahun" value="2022-2024" /> 2022 – 2024</label>
+            <label><input type="checkbox" data-filter="tahun" value="2020-2021" /> 2020 – 2021</label>
+            <label><input type="checkbox" data-filter="tahun" value="2018-2019" /> 2018 – 2019</label>
+            <label><input type="checkbox" data-filter="tahun" value="2016-2017" /> 2016 – 2017</label>
+          </div>
+        </div>
+
+        <!-- Butang guna penapis (lebih berguna pada mobile) -->
+        <button class="btn btn-primary btn-full" id="btnApply" style="margin-top:1rem">
+          ✅ Guna Penapis
+        </button>
+      </aside>
+
+
+      <!-- -----------------------------------------------
+           BAHAGIAN UTAMA: PAPARAN KERETA
+           Kandungan grid akan dijana secara dinamik
+           oleh fungsi renderKereta() dalam inventory.js
+      ----------------------------------------------- -->
+      <main class="inventory-main">
+
+        <!-- Bar atas: bilangan keputusan + susun atur + butang penapis (mobile) -->
+        <div class="inventory-topbar">
+          <!-- Teks ini dikemas kini oleh JS selepas penapis diterapkan -->
+          <span class="result-count" id="resultCount">Memuatkan kereta...</span>
+
+          <!-- Dropdown untuk mengubah susunan kereta dalam grid -->
+          <select class="sort-select" id="sortSelect">
+            <option value="harga-rendah">💰 Harga: Terendah Dahulu</option>
+            <option value="harga-tinggi">💸 Harga: Tertinggi Dahulu</option>
+            <option value="terbaru">📅 Terbaru Dahulu</option>
+            <option value="ansuran-rendah">💳 Ansuran: Terendah Dahulu</option>
+          </select>
+
+          <!-- Butang ini hanya muncul pada mobile untuk buka/tutup sidebar penapis -->
+          <button class="btn btn-outline mobile-filter-btn" id="btnMobileFilter">🔧 Tapis</button>
+        </div>
+
+        <!-- TAG AKTIF — menunjukkan penapis yang sedang digunakan -->
+        <div class="active-filters" id="activeTags"></div>
+
+        <!-- GRID KERETA — semua kad kereta dijana di sini oleh JavaScript -->
+        <div class="inv-grid" id="invGrid">
+          <!-- Tempat letak: JavaScript akan hasilkan HTML kad kereta di sini -->
+        </div>
+
+        <!-- MESEJ TIADA KEPUTUSAN — muncul bila tiada kereta sepadan penapis -->
+        <div class="empty-state" id="emptyState" style="display:none">
+          <div class="empty-icon">🔍</div>
+          <h3>Tiada Kereta Dijumpai</h3>
+          <p>Cuba ubah atau kurangkan tetapan penapis anda untuk melihat lebih banyak kereta.</p>
+          <button class="btn btn-primary" id="btnResetEmpty">Reset Semua Penapis</button>
+        </div>
+
+        <!-- PAGINASI — navigasi antara halaman kereta -->
+        <div class="pagination" id="pagination"></div>
+      </main>
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       MODAL: LAPORAN PEMERIKSAAN 175-TITIK
+       Pop-up yang muncul apabila "Lihat Laporan" diklik.
+       Kandungan modal dikemas kini secara dinamik oleh JS.
+  =================================================== -->
+  <div class="modal-overlay" id="reportModal">
+    <div class="modal-box">
+
+      <!-- Butang 'X' untuk tutup modal -->
+      <button class="modal-close" id="btnTutupModal">✕</button>
+
+      <!-- Tajuk modal -->
+      <h2>📋 Laporan Pemeriksaan 175-Titik</h2>
+
+      <!-- Paparan skor + nama kereta — diisi oleh JavaScript -->
+      <div class="report-score">
+        <div class="score-circle" id="modalSkor">--</div>
+        <div>
+          <div class="score-label" id="modalNamaKereta">--</div>
+          <div class="score-sub" id="modalGredSkor">--</div>
+        </div>
+      </div>
+
+      <!-- Senarai item pemeriksaan — diisi oleh JavaScript -->
+      <div class="report-sections" id="modalLaporan"></div>
+
+      <!-- Nota bawah laporan -->
+      <div class="report-note" id="modalNota"></div>
+
+      <!-- Butang tanya jurutera via WhatsApp -->
+      <a id="modalWaBtn" href="https://wa.me/60183944261" target="_blank" class="btn btn-primary btn-full" style="margin-top:1rem">
+        💬 Tanya Jurutera Kami →
+      </a>
+    </div>
+  </div>
+
+
+  <!-- ===================================================
+       FOOTER
+  =================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo" style="color:#fff">🚗 Abah<strong>UsedCar</strong></div>
+          <p>Platform jualan kereta terpakai terpercaya di Malaysia dengan ketelusan penuh dan jaminan kualiti.</p>
+          <div class="footer-social">
+            <a href="https://wa.me/60183944261" target="_blank" class="social-btn">WhatsApp</a>
+            <a href="mailto:muhddanial32@gmail.com" class="social-btn">E-mel</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Navigasi</h4>
+          <a href="index.html">Laman Utama</a>
+          <a href="inventory.html">Inventori Kereta</a>
+          <a href="integrity.html">Integrity Hub</a>
+          <a href="index.html#feedback">Maklum Balas</a>
+        </div>
+        <div class="footer-links">
+          <h4>Hubungi Kami</h4>
+          <a href="https://wa.me/60183944261">WhatsApp: 018-394 4261</a>
+          <a href="mailto:muhddanial32@gmail.com">muhddanial32@gmail.com</a>
+        </div>
+        <div class="footer-links">
+          <h4>Lokasi Kami</h4>
+          <a href="#">Selangor</a>
+          <a href="#">Kuala Lumpur</a>
+          <a href="#">Johor Bahru</a>
+          <a href="#">Pulau Pinang</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 AbahUsedCar Sdn. Bhd. · Semua hak terpelihara · Dilindungi PDPA Malaysia</p>
+        <div class="footer-badges">
+          <span>🔒 PDPA Compliant</span>
+          <span>✅ SSM Berdaftar</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Butang WhatsApp terapung — sentiasa kelihatan -->
+  <a href="https://wa.me/60183944261" target="_blank" class="whatsapp-float" aria-label="Hubungi kami di WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- Muat naik skrip JavaScript -->
+  <script src="main.js"></script>
+  <script src="inventory.js"></script>
+
+</body>
+</html>
